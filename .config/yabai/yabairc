@@ -1,0 +1,55 @@
+#
+#  (`-').-> (`-').->  _     <-. (`-')_            <-.(`-')            
+#  ( OO)_   (OO )__  (_)       \( OO) )     .->    __( OO)      .->   
+# (_)--\_) ,--. ,'-' ,-(`-'),--./ ,--/ (`-')----. '-'---.\ ,--.(,--.  
+# /    _ / |  | |  | | ( OO)|   \ |  | ( OO).-.  '| .-. (/ |  | |(`-')
+# \_..`--. |  `-'  | |  |  )|  . '|  |)( _) | |  || '-' `.)|  | |(OO )
+# .-._)   \|  .-.  |(|  |_/ |  |\    |  \|  |)|  || /`'.  ||  | | |  \
+# \       /|  | |  | |  |'->|  | \   |   '  '-'  '| '--'  /\  '-'(_ .'
+#  `-----' `--' `--' `--'   `--'  `--'    `-----' `------'  `-----'   
+#
+# github: https://github.com/Nazenano
+
+# Window layout
+yabai -m config layout                     bsp
+
+# External bar
+yabai -m signal --add event=window_focused action="sketchybar --trigger window_focus"
+
+# Base settings
+yabai -m config external_bar               all:28:0       \
+                mouse_follows_focus        off            \
+                focus_follows_mouse        off            \
+                window_zoom_persist        off            \
+                window_placement           second_child   \
+                auto_balance               off            \
+                mouse_modifier             alt            \
+                mouse_action1              move           \
+                mouse_action2              resize         \
+                mouse_drop_action          swap           \
+                                                          \
+                top_padding                7              \
+                bottom_padding             7              \
+                left_padding               7              \
+                right_padding              7              \
+                window_gap                 7
+                #     window_shadow              float          \
+                #     window_opacity             on             \
+                #     window_opacity_duration    0.2            \
+                #     active_window_opacity      1.0            \
+                #     normal_window_opacity      0.8            \
+                #     active_window_border_color  0xbf775759    \
+                #     normal_window_border_color  0x7f353535    \
+                #     window_border_blur          on            \
+                #     window_border_hidpi         on            \
+                #     window_border               on            \
+                #     window_border_width         4             \
+                #     window_border_radius        12            \
+                #     window_animation_duration  0.5            \
+                #     window_animation_easing    ease_out_quint \
+                #     insert_feedback_color      0xaad75f5f     \
+                #     split_ratio                0.50           \
+                #     menubar_opacity            0.0            \
+
+# Exclude apps
+yabai -m rule --add app="^(Reminders|System Settings|Calculator|Messages|Finder|ExpressVPN|Appstore|Photos|Digital Color Meter|QuickTime Player)$" manage=off
