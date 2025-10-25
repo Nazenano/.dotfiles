@@ -1,1 +1,12 @@
-require("shinobu")
+require("set")
+require("remap")
+require("pack")
+require("auto")
+
+require("plugins.color")
+require("plugins.lsp")
+require("plugins.telescope")
+require("plugins.harpoon")
+require("plugins.undotree")
+require("plugins.cloak")
+require("plugins.lualine")
