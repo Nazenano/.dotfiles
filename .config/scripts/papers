@@ -1,0 +1,41 @@
+#!lua
+
+-- set path to the folder containing the wallpapers
+local dir = os.getenv("HOME") .. "/Pictures/wallpapers"
+
+-- add the absolute path of each wallpaper to the papers table
+local papers = {}
+
+-- or call the get_papers() function and it'll do it for you
+-- note: this will likely make the script slower
+local function get_papers()
+    local ls = io.popen('ls "' .. dir .. '"')
+    if not ls then
+        return nil
+    end
+    for file in ls:lines() do
+        local sub = file:sub(file:len() - 3)
+        if sub == ".jpg" or sub == ".png" then
+            table.insert(papers, dir .. "/" .. file)
+        end
+    end
+    ls:close()
+end
+get_papers()
+
+local function get_current_index()
+    local current_path = io.popen(
+        'osascript -e \'tell application "System Events" to tell current desktop to get picture\''):read("*a")
+    for i, path in ipairs(papers) do
+        if current_path:find(path, 1, true) then
+            return i
+        end
+    end
+    return 0
+end
+
+local current_index = get_current_index()
+local next_index = (current_index % #papers) + 1
+
+os.execute('osascript -e \'tell application "System Events" to set picture of every desktop to "' ..
+    papers[next_index] .. '"\'')

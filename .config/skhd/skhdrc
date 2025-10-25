@@ -1,14 +1,17 @@
 #
-#  (`-').-> (`-').->  _     <-. (`-')_            <-.(`-')            
-#  ( OO)_   (OO )__  (_)       \( OO) )     .->    __( OO)      .->   
-# (_)--\_) ,--. ,'-' ,-(`-'),--./ ,--/ (`-')----. '-'---.\ ,--.(,--.  
+#  (`-').-> (`-').->  _     <-. (`-')_            <-.(`-')
+#  ( OO)_   (OO )__  (_)       \( OO) )     .->    __( OO)      .->
+# (_)--\_) ,--. ,'-' ,-(`-'),--./ ,--/ (`-')----. '-'---.\ ,--.(,--.
 # /    _ / |  | |  | | ( OO)|   \ |  | ( OO).-.  '| .-. (/ |  | |(`-')
 # \_..`--. |  `-'  | |  |  )|  . '|  |)( _) | |  || '-' `.)|  | |(OO )
 # .-._)   \|  .-.  |(|  |_/ |  |\    |  \|  |)|  || /`'.  ||  | | |  \
 # \       /|  | |  | |  |'->|  | \   |   '  '-'  '| '--'  /\  '-'(_ .'
-#  `-----' `--' `--' `--'   `--'  `--'    `-----' `------'  `-----'   
+#  `-----' `--' `--' `--'   `--'  `--'    `-----' `------'  `-----'
 #
 # github: https://github.com/Nazenano
+
+# Switch wallpapers
+cmd - tab : "${HOME}"/.config/scripts/papers
 
 # Window navigation
 alt - j : yabai -m window --focus south
@@ -55,10 +58,11 @@ shift + alt - 5 : yabai -m window --space 5
 shift + alt - 6 : yabai -m window --space 6
 
 # Yabai services
-ctrl + alt - q : yabai --stop-service 
-ctrl + alt - s : yabai --start-service 
-ctrl + alt - r : yabai --restart-service 
+ctrl + alt - q : yabai --stop-service
+ctrl + alt - s : yabai --start-service
+ctrl + alt - r : yabai --restart-service
 
 # Open apps
-cmd - 1 : osascript -e 'tell application "iTerm2" to create window with default profile command ""' || open -na iTerm
-cmd - 2 : osascript -e 'tell application "LibreWolf" to create window with default profile command ""' || open -na LibreWolf
+cmd - 1 : open -na Alacritty
+cmd - 2 : open -na LibreWolf
+cmd - 3 : open -na ExpressVPN
