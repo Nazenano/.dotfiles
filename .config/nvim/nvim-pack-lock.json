@@ -59,6 +59,10 @@
       "rev": "b9fd522",
       "src": "https://github.com/nvim-lua/plenary.nvim"
     },
+    "render-markdown.nvim": {
+      "rev": "10126ef",
+      "src": "https://github.com/MeanderingProgrammer/render-markdown.nvim"
+    },
     "telescope.nvim": {
       "rev": "a0bbec2",
       "src": "https://github.com/nvim-telescope/telescope.nvim",
